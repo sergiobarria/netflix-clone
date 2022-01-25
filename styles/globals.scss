@@ -1,0 +1,76 @@
+@import 'variables';
+@import 'typography';
+@import 'components';
+
+
+:root {
+  --clr-black: rgb(0, 0, 0);
+  --clr-black-100: rgb(24, 24, 24);
+  --clr-black-200: rgba(0, 0, 0, 0.6);
+  --clr-black-300: rgb(17, 24, 39);
+  --clr-black-400: rgb(20, 20, 20);
+
+  --clr-gray-100: rgb(119, 119, 119);
+  --clr-gray-200: rgb(156, 163, 175);
+  --clr-gray-300: rgba(42, 42, 42, 0.6);
+
+  --clr-gray-blue: rgba(75, 85, 99,  1)
+  --clr-gray-blue-100: rgb(55, 65, 81)
+
+  --clr-white-100: rgba(255, 255,255, 1);
+  --clr-white-200: rgba(243, 244, 246, 1);
+  --clr-white-300: rgba(209, 213, 219, 1);
+
+  --clr-white-100: rgba(110, 231, 183, 1);
+
+  --clr-red: rgb(220, 38, 38);
+  --clr-red-100: rgba(185,28,28,1);
+
+  /* Shadows */
+  --shadow-100: rgba(0, 0, 0, 0.3);
+  --shadow-200: rgba(158, 155, 155, 1);
+  --shadow-300: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Netflix Sans', -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  color: white;
+  background-color: $bg-gray;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, hr, pre, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: 0px;
+}
+
+button {
+  background-image: none;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  text-transform: none;
+  margin: 0;
+  border: 0px;
+  outline: 0px;
+}

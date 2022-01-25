@@ -17,6 +17,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
+          {/* Fonts */}
           <link
             rel='preload'
             href='/fonts/netflix-sans/NetflixSans-Light.ttf'

@@ -1,0 +1,19 @@
+.cardContainer {
+  // margin-right: 1rem;
+  width: 18.75rem;
+  height: 10.625rem;
+  padding: 0.5rem;
+  transition: all 300ms ease-in-out;
+
+  .imageContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

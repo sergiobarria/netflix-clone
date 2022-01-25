@@ -1,0 +1,15 @@
+.sectionContainer {
+  margin: 2rem 0;
+  padding: 0 3.75rem;
+
+  h2 {
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+  }
+
+  .rowContainer {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+}

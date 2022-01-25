@@ -1,0 +1,35 @@
+.nav {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  padding: 0 3.75rem;
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+
+  &__logoContainer {
+    margin-right: 3rem;
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__links {
+    display: flex;
+
+    li {
+      list-style: none;
+      margin-right: 1.5rem;
+    }
+  }
+}
