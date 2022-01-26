@@ -9,10 +9,27 @@ import { IoIosArrowForward } from 'react-icons/io';
 
 import styles from '../styles/Home.module.scss';
 
+import { magic } from '../lib/magicClient';
+
 export default function HomePage() {
   const [email, setEmail] = React.useState<string | null>('');
   const [userMsg, setUserMsg] = React.useState<string | null>('');
+  const [loading, setLoading] = React.useState<boolean>(false);
   const router = useRouter();
+
+  React.useEffect(() => {
+    const handleComplete = () => {
+      setLoading(false);
+    };
+
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleComplete);
+      router.events.off('routeChangeError', handleComplete);
+    };
+  }, [router]);
 
   const handleOnChangeEmail = (e: React.FormEvent<HTMLInputElement>) => {
     const email = e.currentTarget.value;
@@ -30,12 +47,24 @@ export default function HomePage() {
     }
   };
 
-  const handleLoginWithEmail = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleLoginWithEmail = async (
+    e: React.MouseEvent<HTMLButtonElement>
+  ) => {
     e.preventDefault();
 
     if (email) {
-      if (email === 'example@example.com') {
-        router.push('/browse');
+      if (email === 'sergio.barria9210@gmail.com') {
+        try {
+          setLoading(true);
+          // @ts-ignore
+          const didToken = await magic.auth.loginWithMagicLink({ email });
+
+          if (didToken) {
+            router.push('/browse');
+          }
+        } catch (error) {
+          console.error('Something went wrong loggin in', error);
+        }
       } else {
         setUserMsg('Something went wrong logging in.');
       }
@@ -100,7 +129,13 @@ export default function HomePage() {
                       onClick={handleLoginWithEmail}
                       className={styles.signupBtn}
                     >
-                      Get Started <IoIosArrowForward />
+                      {loading ? (
+                        'Loading...'
+                      ) : (
+                        <span>
+                          Get Started <IoIosArrowForward />
+                        </span>
+                      )}
                     </button>
                   </div>
                 </div>

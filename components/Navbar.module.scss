@@ -1,3 +1,5 @@
+@import '../styles/variables';
+
 .nav {
   position: fixed;
   top: 0;
@@ -11,7 +13,6 @@
   padding: 0 3.75rem;
   display: flex;
   align-items: center;
-  // justify-content: space-between;
 
   &__logoContainer {
     margin-right: 3rem;
@@ -31,5 +32,28 @@
       list-style: none;
       margin-right: 1.5rem;
     }
+  }
+}
+
+.usernameContainer {
+  .username {
+    color: white;
+    font-weight: 300;
+  }
+  .usernameBtn {
+    display: flex;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  background-color: $bg-gray;
+  width: 10rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: $border-radius;
+
+  a {
+    cursor: pointer;
   }
 }
