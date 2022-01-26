@@ -11,19 +11,17 @@ interface IProps {
 }
 
 export default function Banner({ content }: IProps) {
-  // const banner =
-  //   content && content[Math.floor(Math.random() * content?.length - 1)];
-  // console.log(banner?.backdrop_path);
-
   return (
     <header
       className={styles.banner}
-      style={{
-        backgroundImage: `url(${IMAGE_BASE_URL}${content?.backdrop_path})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center center',
-      }}
+      style={
+        content && {
+          backgroundImage: `url(${IMAGE_BASE_URL}${content?.backdrop_path})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center center',
+        }
+      }
     >
       <div className={styles.banner__content}>
         <div className={styles.banner__category}>
