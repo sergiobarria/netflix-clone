@@ -59,6 +59,7 @@
 
   .formContent {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -75,6 +76,19 @@
       border-bottom-right-radius: 0;
     }
 
+    .formInput {
+      display: flex;
+    }
+
+    .errorMsg {
+      color: $red-primary;
+      display: block;
+      width: 30rem;
+      text-align: start;
+      padding-left: 1rem;
+      margin-top: 0.25rem;
+    }
+
     h3 {
       font-weight: normal;
       margin-bottom: 1rem;
@@ -82,6 +96,8 @@
 
     .signupBtn {
       display: flex;
+      color: white;
+      font-weight: 300;
       align-items: center;
       background-color: $red-primary;
       padding: 0.75rem 1.5rem;
