@@ -12,16 +12,21 @@
   "dependencies": {
     "clsx": "^1.1.1",
     "magic-sdk": "^8.0.1",
+    "movie-trailer": "^2.1.0",
     "next": "12.0.8",
     "normalize.css": "^8.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
+    "react-modal": "^3.14.4",
+    "react-youtube": "^7.14.0",
     "sass": "^1.49.0"
   },
   "devDependencies": {
     "@types/node": "17.0.10",
     "@types/react": "17.0.38",
+    "@types/react-modal": "^3.13.1",
+    "@types/react-youtube": "^7.10.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8",

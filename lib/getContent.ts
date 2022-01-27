@@ -2,8 +2,6 @@ import { MOVIE_DB_BASE_URL } from '../constants';
 
 import endpoints from './endpoints';
 
-const API_KEY = process.env.MOVIE_DB_API_KEY;
-
 export const fetchData = async (endpoint: string) => {
   try {
     const response = await fetch(`${MOVIE_DB_BASE_URL}${endpoint}`);

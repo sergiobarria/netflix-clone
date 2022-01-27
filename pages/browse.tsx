@@ -24,10 +24,10 @@ export async function getServerSideProps() {
 export default function BrowsePage({
   content,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const [netflixOriginals, setNetflixOriginals] = React.useState<IVideo[]>([]);
+  const [bannerContent, setBannerContent] = React.useState<IVideo[]>([]);
 
   React.useEffect(() => {
-    setNetflixOriginals(content.netflixOriginals);
+    setBannerContent(content.netflixOriginals);
   }, [content.netflixOriginals]);
 
   return (
@@ -42,10 +42,8 @@ export default function BrowsePage({
         {/* Banner */}
         <Banner
           content={
-            netflixOriginals &&
-            netflixOriginals[
-              Math.floor(Math.random() * netflixOriginals.length - 1)
-            ]
+            bannerContent &&
+            bannerContent[Math.floor(Math.random() * bannerContent.length - 1)]
           }
         />
 
@@ -53,6 +51,7 @@ export default function BrowsePage({
         <CategoryRow
           title='Netflix Originals'
           content={content.netflixOriginals}
+          isTv
         />
         <CategoryRow title='Top Rated' content={content.topRated} />
         <CategoryRow title='Trending Now' content={content.trending} />

@@ -10,15 +10,19 @@ import styles from './CategoryRow.module.scss';
 interface IProps {
   title: string;
   content: IVideo[];
+  isTv?: boolean;
 }
 
-export default function CategoryRow({ title, content }: IProps) {
+export default function CategoryRow({ title, content, isTv }: IProps) {
   return (
     <section className={styles.sectionContainer}>
       <h2>{title}</h2>
       <div className={styles.rowContainer}>
         {content.map((item: IVideo) => (
-          <Link key={item.id} href={`/watch/${item.id}`}>
+          <Link
+            key={item.id}
+            href={`/watch/${item.id}?cat=${isTv ? 'tv' : 'movie'}`}
+          >
             <a>
               <Card id={item.id} video={item} />
             </a>

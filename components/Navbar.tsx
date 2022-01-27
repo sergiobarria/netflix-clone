@@ -67,12 +67,12 @@ export default function Navbar() {
         <div className={styles.nav__linksContainer}>
           <ul className={styles.nav__links}>
             <li>
-              <Link href='/'>
+              <Link href='/browse'>
                 <a>Home</a>
               </Link>
             </li>
             <li>
-              <Link href='/'>
+              <Link href='/my-list'>
                 <a>My List</a>
               </Link>
             </li>
