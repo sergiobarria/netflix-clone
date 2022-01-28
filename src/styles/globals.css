@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --clr-primary: #e50a13;
+
+  --clr-gray-light: #bfbfbf;
+  --clr-gray-primary: #302e2e;
+  --clr-gray-dark: #141414;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 300;
+    src: url('/fonts/NetflixSansLight.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 400;
+    src: url('/fonts/NetflixSansRegular.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 500;
+    src: url('/fonts/NetflixSansMedium.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 700;
+    src: url('/fonts/NetflixSansBold.woff2') format('woff2');
+  }
+
+  html,
+  body {
+    @apply bg-gray-dark text-white font-light;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+}
+
+@layer components {
+}
+
+@layer utilities {
+  .custom-border {
+    @apply border-b-8 border-gray-dark;
+  }
+} ;
