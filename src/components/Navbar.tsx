@@ -17,14 +17,18 @@ export default function Navbar({ showLinks }: IProps) {
         'bg-gradient-to-b from-black/70 via-black/40 z-20 to-transparent'
       )}
     >
-      <Image
-        src='/static/netflix.svg'
-        width={100}
-        height={75}
-        alt='netflix logo'
-      />
+      <Link href='/'>
+        <a>
+          <Image
+            src='/static/netflix.svg'
+            width={100}
+            height={75}
+            alt='netflix logo'
+          />
+        </a>
+      </Link>
 
-      <div className='ml-8 w-full flex items-center justify-between'>
+      <div className='flex items-center justify-between w-full ml-8'>
         {showLinks && (
           <div className='space-x-6'>
             <Link href='/'>
