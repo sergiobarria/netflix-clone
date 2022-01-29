@@ -1,28 +1,28 @@
 let page = Math.floor(Math.random() * 3) + 1;
 
 export const genres = [
-  { id: 1, title: 'Banner Content', url: `/trending/movie/week` },
+  { id: 1, title: 'Banner Content', url: `/trending/movie/week`, isTv: true },
+  { id: 2, title: 'Top 10 Today', url: `/trending/movie/week` },
+  { id: 3, title: 'Top Movies', url: `/movie/popular?&page=1` },
   {
-    id: 2,
-    title: 'Netflix Originals',
-    url: `/discover/tv?&page=${page}&with_networks=213`,
-  },
-  { id: 3, title: 'Top 10 Today', url: `/trending/all/day` },
-  { id: 4, title: 'Top Movies', url: `/movie/top_rated?&page=1` },
-  {
-    id: 5,
+    id: 4,
     title: 'Action',
     url: `/discover/movie?&page=${page}&with_genres=28`,
   },
   {
-    id: 6,
+    id: 5,
     title: 'Comedy',
     url: `/discover/movie?&page=${page}&with_genres=35`,
   },
   {
-    id: 7,
+    id: 6,
     title: 'Adventure',
     url: `/discover/movie?&page=${page}&with_genres=12`,
+  },
+  {
+    id: 7,
+    title: 'Netflix Originals',
+    url: `/discover/tv?&page=1&with_networks=213`,
   },
   {
     id: 8,

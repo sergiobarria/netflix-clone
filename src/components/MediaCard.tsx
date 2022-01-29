@@ -5,9 +5,9 @@ import clsx from 'clsx';
 
 import { MOVIE_IMAGE_BASE_URL } from '@/constants';
 
-import { IVideo } from '@/../types';
+import { IMedia } from '@/types';
 
-export default function MediaCard({ content }: { content: IVideo }) {
+export default function MediaCard({ content }: { content: IMedia }) {
   return (
     <article
       className={clsx(
@@ -15,7 +15,7 @@ export default function MediaCard({ content }: { content: IVideo }) {
         'hover:scale-105 transition duration-200'
       )}
     >
-      <div className='w-full h-full rounded-lg overflow-hidden relative'>
+      <div className='relative w-full h-full overflow-hidden rounded-lg'>
         <Image
           src={`${MOVIE_IMAGE_BASE_URL}${
             content?.backdrop_path || content?.poster_path

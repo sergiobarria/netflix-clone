@@ -23,6 +23,7 @@ class MyDocument extends Document {
             process.env.NODE_ENV === 'development' && 'debug-screens'
           )}
         >
+          <div id='modal-root'></div>
           <Main />
           <NextScript />
         </body>
