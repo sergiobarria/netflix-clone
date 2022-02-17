@@ -9,8 +9,6 @@ import {
   UserCredential,
 } from 'firebase/auth';
 
-import { initialAuthState, AuthState } from './auth.state';
-
 import { auth } from '../../firebase.config';
 
 interface AuthContextType {
