@@ -4,8 +4,6 @@ import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import { IoIosArrowForward } from 'react-icons/io';
 
-import { supabase } from '@/lib/client';
-
 export default function HomeForm() {
   const [loading, setLoading] = React.useState<boolean>(false);
   const [email, setEmail] = React.useState<string>('');
@@ -13,23 +11,6 @@ export default function HomeForm() {
 
   async function handleLoginWithEmail(email: string) {
     console.log(email);
-    // Passwordless Login
-    // try {
-    //   setLoading(true);
-
-    //   console.log(email);
-    //   const { error } = await supabase.auth.signIn({ email });
-
-    //   if (error) {
-    //     console.error('Something went wrong');
-    //   } else {
-    //     router.push('/browse');
-    //   }
-    // } catch (error: any) {
-    //   console.error(error.message);
-    // } finally {
-    //   setLoading(false);
-    // }
   }
   return (
     <form>
