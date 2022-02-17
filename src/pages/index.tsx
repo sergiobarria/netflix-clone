@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Link from 'next/link';
-import Image from 'next/image';
 import clsx from 'clsx';
 
 import Navbar from '@/components/Navbar';
@@ -16,9 +14,9 @@ export default function HomePage() {
   const [openQuestion, setOpenQuestion] = React.useState<number | undefined>();
 
   return (
-    <div className='bg-black min-h-screen'>
+    <div className='min-h-screen bg-black'>
       {/* Navbar */}
-      <Navbar />
+      <Navbar showBtn />
 
       {/* Content */}
       <div
@@ -52,8 +50,8 @@ export default function HomePage() {
         ))}
 
         {/* FAQS */}
-        <section className='bg-black px-12 py-20'>
-          <h2 className='text-3xl md:text-4xl text-center font-normal mb-6'>
+        <section className='px-12 py-20 bg-black'>
+          <h2 className='mb-6 text-3xl font-normal text-center md:text-4xl'>
             Frequently Asked Questions
           </h2>
           {faqs.map((faq) => (

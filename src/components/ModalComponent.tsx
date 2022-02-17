@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import Modal from 'react-modal';
 
 import useModal from '@/hooks/useModal';
-import { hideModal, showModal } from '@/context/modal.actions';
+import { hideModal } from '@/context/modal.actions';
 
 interface Props {
   children: React.ReactNode;

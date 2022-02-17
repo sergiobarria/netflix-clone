@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { ModalProvider } from '@/context/modal.context';
 
 import '@/styles/globals.css';
+import { AuthContextProvider } from '@/context/auth.context';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,9 +14,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Netflix - Watch Tv Shows Online, Watch Movies Online</title>
         <link href='/static/favicon.ico' rel='shortcut icon' />
       </Head>
-      <ModalProvider>
-        <Component {...pageProps} />
-      </ModalProvider>
+      <AuthContextProvider>
+        <ModalProvider>
+          <Component {...pageProps} />
+        </ModalProvider>
+      </AuthContextProvider>
     </>
   );
 }

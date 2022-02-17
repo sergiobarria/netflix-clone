@@ -2,14 +2,21 @@ import React from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import clsx from 'clsx';
 
+import { useAuth } from '@/hooks/useAuth';
+import Dropdown from './Dropdown';
+
 interface IProps {
   showLinks?: boolean;
+  showBtn?: boolean;
 }
 
-export default function Navbar({ showLinks }: IProps) {
+export default function Navbar({ showLinks, showBtn }: IProps) {
+  const { user } = useAuth();
+
   return (
     <nav
       className={clsx(
@@ -39,16 +46,19 @@ export default function Navbar({ showLinks }: IProps) {
             </Link>
           </div>
         )}
-        <Link href='/signin'>
-          <a
-            className={clsx(
-              'bg-primary px-4 py-2 rounded-md',
-              !showLinks && 'ml-auto'
-            )}
-          >
-            Sign In
-          </a>
-        </Link>
+        {showBtn && (
+          <Link href='/login'>
+            <a
+              className={clsx(
+                'bg-primary px-4 py-2 rounded-md',
+                !showLinks && 'ml-auto'
+              )}
+            >
+              Sign In
+            </a>
+          </Link>
+        )}
+        {user && <Dropdown />}
       </div>
     </nav>
   );

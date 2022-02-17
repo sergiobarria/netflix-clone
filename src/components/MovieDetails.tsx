@@ -9,7 +9,7 @@ import ModalComponent from './ModalComponent';
 import useModal from '@/hooks/useModal';
 import { IMediaDetail, IMedia } from '@/types';
 import YoutubeEmbedVideo from './YoutubeEmbedVideo';
-import useConvertHours from '@/hooks/useConverHours';
+import useConvertHours from '@/hooks/useConvertHours';
 import Image from 'next/image';
 
 export default function MovieDetails() {
@@ -18,7 +18,7 @@ export default function MovieDetails() {
   >(undefined);
   const [embedId, setEmbedId] = React.useState<string | null>(null);
   const [showVideo, setShowVideo] = React.useState<boolean>(false);
-  const { state, dispatch } = useModal();
+  const { state } = useModal();
 
   const runtime = useConvertHours(mediaContent?.runtime!);
 

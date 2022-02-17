@@ -4,14 +4,32 @@ import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import { IoIosArrowForward } from 'react-icons/io';
 
+import { supabase } from '@/lib/client';
+
 export default function HomeForm() {
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const [email, setEmail] = React.useState<string>('');
   const router = useRouter();
 
-  function handleLoginWithEmail(e: React.MouseEvent<HTMLButtonElement>) {
-    e.preventDefault();
+  async function handleLoginWithEmail(email: string) {
+    console.log(email);
+    // Passwordless Login
+    // try {
+    //   setLoading(true);
 
-    // TODO: Handle passwordless login with Supabase
-    router.push('/browse');
+    //   console.log(email);
+    //   const { error } = await supabase.auth.signIn({ email });
+
+    //   if (error) {
+    //     console.error('Something went wrong');
+    //   } else {
+    //     router.push('/browse');
+    //   }
+    // } catch (error: any) {
+    //   console.error(error.message);
+    // } finally {
+    //   setLoading(false);
+    // }
   }
   return (
     <form>
@@ -24,7 +42,7 @@ export default function HomeForm() {
           'space-y-4 md:space-y-0 md:flex-row'
         )}
       >
-        <div className='flex flex-col relative text-black'>
+        <div className='relative flex flex-col text-black'>
           <input
             id='email'
             type='email'
@@ -33,6 +51,7 @@ export default function HomeForm() {
               'peer border-0 w-[22rem] md:w-[26rem] py-4 placeholder-transparent',
               'focus:ring-primary focus:border-0'
             )}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <label
             htmlFor='email'
@@ -47,10 +66,19 @@ export default function HomeForm() {
           </label>
         </div>
         <button
-          className='flex items-center bg-primary p-4'
-          onClick={handleLoginWithEmail}
+          className='p-4 bg-primary'
+          onClick={(e) => {
+            e.preventDefault();
+            handleLoginWithEmail(email);
+          }}
         >
-          Get Started <IoIosArrowForward />
+          {loading ? (
+            'Loading'
+          ) : (
+            <span className='flex items-center'>
+              Get Started <IoIosArrowForward />
+            </span>
+          )}
         </button>
       </div>
     </form>
